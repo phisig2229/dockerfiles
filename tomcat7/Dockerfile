@@ -27,11 +27,6 @@ ENV JAVA_HOME /usr/lib/jvm/java-7-oracle/
 RUN cd /tmp && curl -L 'http://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR_VERSION/v$TOMCAT_MINOR_VERSION/bin/apache-tomcat-$TOMCAT_MINOR_VERSION.tar.gz' | tar -xz  
 RUN mv /tmp/apache-tomcat-$TOMCAT_MINOR_VERSION/ /opt/tomcat7/
 
-ENV ARTIFACT_ID spark
-ENV ARTIFACT_VERSION 0.0.4-SNAPSHOT
-
-RUN cd /opt/tomcat7/webapps && curl -O 'http://10.0.2.2:8083/$ARTIFACT_ID-$ARTIFACT_VERSION.war'
-
 ENV CATALINA_HOME /opt/tomcat7
 ENV PATH $PATH:$CATALINA_HOME/bin
 
