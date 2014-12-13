@@ -1,4 +1,4 @@
-FROM	phisig2229/bb:ubuntu-14.04
+FROM	busybox:ubuntu-14.04
 
 ENV		JAVA_HOME /java
 
